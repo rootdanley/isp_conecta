@@ -1,55 +1,47 @@
-/* ===============================
-   CONTAINER PADRÃO
-================================= */
-
+/* =========================================================
+   CONTAINER PADRÃO (UX: largura controlada + padding fluido)
+========================================================= */
 .container {
   width: 100%;
-  max-width: 2000px;
+  max-width: 1400px;              /* antes: 2000px (vazio demais) */
   margin: 0 auto;
-  padding: 0 8%;
+  padding-inline: clamp(16px, 4vw, 48px);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-/* ===============================
+/* =========================================================
    GOV BAR (barra preta)
-================================= */
-
+========================================================= */
 .gov-bar {
   background: #0f0f0f;
   color: #ffffff;
   font-size: 0.85rem;
-  padding: 6px 0; /* remove padding lateral */
-}
-
-.gov-bar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 6px 0;
 }
 
 .gov-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .gov-domain {
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .gov-social {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .gov-social a {
   color: #ffffff;
   font-size: 14px;
   opacity: 0.8;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
 }
 
 .gov-social a:hover {
@@ -58,171 +50,177 @@
 
 .gov-right {
   display: flex;
-  gap: 25px;
+  gap: 18px;
 }
 
 .gov-right a {
   color: #ffffff;
   text-decoration: none;
   opacity: 0.85;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .gov-right a:hover {
   opacity: 1;
 }
 
-
-/* ===============================
+/* =========================================================
    MAIN HEADER (azul)
-================================= */
-
+========================================================= */
 .main-header {
   background: #0077cc;
-  color: rgb(236, 236, 236);
-  padding: 12px 0; /* remove lateral */
+  color: #f2f2f2;
+  padding: 8px 0;
 }
 
-.main-header .container {
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* NAV desktop */
+#mainNav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 
-.main-header nav a {
-  color: rgb(240, 240, 240);
-  margin-left: 16px;
-  text-decoration: none;
-}
-
-.main-header nav a {
+#mainNav a {
   position: relative;
-  color: white;
-  margin-left: 20px;
+  color: #ffffff;
   text-decoration: none;
-  padding-bottom: 4px;
-  transition: 0.3s ease;
+
+  padding: 8px 10px;
+  border-radius: 5px;
+
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+  white-space: nowrap;
 }
 
-/* underline animado */
-.main-header nav a::after {
+/* hover com “pill” (UX melhor que só underline) */
+#mainNav a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* underline sutil */
+#mainNav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 4px;
   height: 2px;
-  background: white;
-  transition: width 0.3s ease;
+  background: rgba(255, 255, 255, 0.164);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.2s ease;
 }
 
-/* hover */
-.main-header nav a:hover::after {
-  width: 100%;
+#mainNav a:hover::after {
+  transform: scaleX(1);
 }
 
-/* ABA ATIVA */
-.main-header nav a.active::after {
-  width: 100%;
+/* aba ativa: mantém branco (não “some” no azul) */
+#mainNav a.active {
+  background: rgba(255, 255, 255, 0.20);
+  font-weight: 700;
 }
 
-.main-header nav a.active {
-  color: rgba(23, 25, 126, 0.973);
+#mainNav a.active::after {
+  transform: scaleX(1);
 }
-/* ===============================
+
+/* =========================================================
+   MENU TOGGLE (hambúrguer)
+========================================================= */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* overlay do menu (seu HTML já tem) */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 900;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =========================================================
    RESPONSIVO
-================================= */
+   - hambúrguer entra quando menu começa a apertar
+   - 1024 é um breakpoint saudável
+========================================================= */
+@media (max-width: 1024px) {
 
+  .menu-toggle {
+    display: block;
+  }
+
+  /* vira menu lateral */
+  #mainNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(320px, 85vw);
+    background: #0077cc;
+
+    padding: 80px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 1000;
+  }
+
+  #mainNav.active {
+    transform: translateX(0);
+  }
+
+  #mainNav a {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 12px 12px;
+    border-radius: 12px;
+  }
+
+  #mainNav a::after {
+    display: none; /* no menu lateral, pill já basta */
+  }
+}
+
+/* =========================================================
+   GOV BAR no mobile (compacta sem virar “tijolo”)
+========================================================= */
 @media (max-width: 768px) {
 
-  .container {
-    padding: 0 5%;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  #mainNav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 260px;
-    background: #0077cc;
-    padding: 80px 20px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-
-  #mainNav.active {
-    transform: translateX(0);
-  }
-
-  #mainNav a {
-    color: white;
-    font-size: 18px;
-  }
-
   .gov-bar .container {
-    flex-direction: column;
     gap: 8px;
-    text-align: center;
-  }
-
-  .gov-left,
-  .gov-right {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 1224px) {
-
-  .container {
-    padding: 0 5%;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  #mainNav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 260px;
-    background: #0077cc;
-    padding: 80px 20px 20px 20px;
-    display: flex;
     flex-direction: column;
-    gap: 15px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
+    align-items: center;
   }
 
-  #mainNav.active {
-    transform: translateX(0);
-  }
-
-  #mainNav a {
-    color: white;
-    font-size: 18px;
-  }
-
-  .gov-bar .container {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .gov-left,
   .gov-right {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 14px;
   }
 }

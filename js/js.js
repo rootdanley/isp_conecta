@@ -22,20 +22,20 @@ home: {
       }
       ,
       {
-        titulo: "Painel Mulher",
+        titulo: "Panorama da violência contra a mulher",
         descricao: "Indicadores atualizados.",
         imagem: "img/mulher-hero.png"
       }
       ,
       {
-        titulo: "Painel Mulher",
+        titulo: "Estudo Mulher",
         descricao: "Indicadores atualizados.",
         imagem: "img/mulher-hero.png"
       }
     ]
   },
     ambiente: {
-    imagem: "img/ambiente-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Amazonia",
@@ -46,7 +46,7 @@ home: {
   },
 
   armas: {
-    imagem: "img/armas-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Painel Armas",
@@ -56,7 +56,7 @@ home: {
     ]
   },
     transito: {
-    imagem: "img/transito-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Controle de Armas",
@@ -66,7 +66,7 @@ home: {
     ]
   },
     serie: {
-    imagem: "img/serie-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Seríe Historica",
@@ -76,7 +76,7 @@ home: {
     ]
   },
     discriminacao: {
-    imagem: "img/discriminacao-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Seríe Historica",
@@ -86,7 +86,7 @@ home: {
     ]
   },
     letalidade: {
-    imagem: "img/letalidade-hero.png",
+    imagem: "img/home.jpg",
     cards: [
       {
         titulo: "Painel de Letalidade Violenta",
@@ -115,16 +115,13 @@ function renderHero(tab) {
 
   heroContent.innerHTML = `
     <div class="home-hero">
-      
       <div class="hero-text">
         <h1>${heroData.home.titulo}</h1>
         <p>${heroData.home.subtitulo}</p>
       </div>
-
       <div class="hero-image">
         <img src="${heroData.home.imagemLateral}" alt="Logos institucionais">
       </div>
-
     </div>
   `;
 
@@ -136,8 +133,8 @@ function renderHero(tab) {
           <div class="card">
             <img src="${item.imagem}" class="card-img">
             <div>
-              <h3>${item.titulo}</h3>
-              <p>${item.descricao}</p>
+              <h3 class="card-titulo">${item.titulo}</h3>
+              <p class="card-descricao">${item.descricao}</p>
               <button>Acessar</button>
             </div>
           </div>
