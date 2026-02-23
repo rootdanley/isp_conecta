@@ -1,0 +1,16 @@
+@media (max-width: 900px) {
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%;
+  }
+}

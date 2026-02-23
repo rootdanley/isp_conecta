@@ -1,0 +1,228 @@
+/* ===============================
+   CONTAINER PADRÃO
+================================= */
+
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* ===============================
+   GOV BAR (barra preta)
+================================= */
+
+.gov-bar {
+  background: #0f0f0f;
+  color: #ffffff;
+  font-size: 0.85rem;
+  padding: 6px 0; /* remove padding lateral */
+}
+
+.gov-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gov-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gov-domain {
+  font-weight: 500;
+}
+
+.gov-social {
+  display: flex;
+  gap: 14px;
+}
+
+.gov-social a {
+  color: #ffffff;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.gov-social a:hover {
+  opacity: 1;
+}
+
+.gov-right {
+  display: flex;
+  gap: 25px;
+}
+
+.gov-right a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.gov-right a:hover {
+  opacity: 1;
+}
+
+
+/* ===============================
+   MAIN HEADER (azul)
+================================= */
+
+.main-header {
+  background: #0077cc;
+  color: rgb(236, 236, 236);
+  padding: 12px 0; /* remove lateral */
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header nav a {
+  color: rgb(240, 240, 240);
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.main-header nav a {
+  position: relative;
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+/* underline animado */
+.main-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.main-header nav a:hover::after {
+  width: 100%;
+}
+
+/* ABA ATIVA */
+.main-header nav a.active::after {
+  width: 100%;
+}
+
+.main-header nav a.active {
+  color: rgba(23, 25, 126, 0.973);
+}
+/* ===============================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #mainNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #0077cc;
+    padding: 80px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  #mainNav.active {
+    transform: translateX(0);
+  }
+
+  #mainNav a {
+    color: white;
+    font-size: 18px;
+  }
+
+  .gov-bar .container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .gov-left,
+  .gov-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1224px) {
+
+  .container {
+    padding: 0 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #mainNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #0077cc;
+    padding: 80px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  #mainNav.active {
+    transform: translateX(0);
+  }
+
+  #mainNav a {
+    color: white;
+    font-size: 18px;
+  }
+
+  .gov-bar .container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .gov-left,
+  .gov-right {
+    justify-content: center;
+  }
+}
