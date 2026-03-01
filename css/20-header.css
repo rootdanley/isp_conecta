@@ -1,0 +1,73 @@
+/* css/20-header.css */
+.card a:hover{
+    background-color: rgb(0, 102, 166);
+    border-radius: 5px;
+    color: white;
+
+}
+
+#menu a:hover{
+    background-color: rgb(0, 102, 166);
+    border-radius: 5px;
+    color: white;
+
+}
+
+#logo{
+   display: flex;
+   align-items: center;
+   margin-right: 20px;
+}
+
+#header{
+    /*box-sizing: border-box;*/
+    /*height: 70px;*/
+    padding: 1rem 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0066A6;
+}
+
+
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+
+#menu a{
+    display: block;
+    padding: 1rem .6rem;
+    color: white;
+}
+
+#btn-mobile{
+    display: none;
+    color: white;
+}
+
+
+.logo_header{
+    margin-top: 10px;
+    width: 7rem;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulo{
+    margin-right: 8px;
+    font-family: "Inter", sans-serif;
+    color: white;
+
+}
+
+#sub-titulo{
+    font-size: 1.6em;
+    color: white;
+}
+/*Fim do Header*/

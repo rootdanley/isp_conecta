@@ -1,208 +1,264 @@
-const heroData = {
+console.log("Js Funcionando");
 
-home: {
-  titulo: "Instituto de Segurança Pública",
-  subtitulo: "Bem-vindo(a) ao ISP Conecta, a página de dados abertos do Instituto de Segurança Pública. <br><br>Aqui você encontra, de forma transparente, painéis e dashboards com dados sobre registros criminais e atividades policiais do Estado do Rio de Janeiro.",
-  imagem: "img/home.jpg",
-  imagemLateral: "img/logos-insitucionais.png"
-},
+// =========================
+// MENU MOBILE
+// =========================
+const btnMobile = document.getElementById("btn-mobile");
 
-  mulher: {
-    imagem: "img/mulher-hero.png",
-    cards: [
-      {
-        titulo: "Dossiê Mulher",
-        descricao: "Dados completos.",
-        imagem: "img/mulher-hero.png"
-      },
-      {
-        titulo: "Painel Mulher",
-        descricao: "Indicadores atualizados.",
-        imagem: "img/mulher-hero.png"
-      }
-      ,
-      {
-        titulo: "Panorama da violência contra a mulher",
-        descricao: "Indicadores atualizados.",
-        imagem: "img/mulher-hero.png"
-      }
-      ,
-      {
-        titulo: "Estudo Mulher",
-        descricao: "Indicadores atualizados.",
-        imagem: "img/mulher-hero.png"
-      }
-    ]
+function toggleMenu(event) {
+  if (event.type === "touchstart") event.preventDefault();
+
+  const nav = document.getElementById("nav");
+  nav.classList.toggle("active");
+
+  const isActive = nav.classList.contains("active");
+  event.currentTarget.setAttribute("aria-expanded", isActive ? "true" : "false");
+}
+
+btnMobile.addEventListener("click", toggleMenu);
+btnMobile.addEventListener("touchstart", toggleMenu);
+
+// =========================
+// PAINÉIS (boxes)
+// =========================
+const PANELS = [
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card",
+    title: "Dossiê Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+    tag: "mulher",
   },
-    ambiente: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Amazonia",
-        descricao: "Dados completos.",
-        imagem: "img/card-mulher-1.jpg"
-      }
-    ]
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card",
+    title: "Painel Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+    tag: "mulher",
   },
-
-  armas: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Painel Armas",
-        descricao: "Estatísticas mensais de apreensão de armas, munições, simulacros e artefatos explosivos no estado do Rio de Janeiro",
-        imagem: "img/armas-hero.png"
-      }
-    ]
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card-painel-mulher",
+    title: "Panorama da violência contra a Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+    tag: "mulher",
   },
-    transito: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Controle de Armas",
-        descricao: "Estatísticas.",
-        imagem: "img/transito-hero.jpg"
-      }
-    ]
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card",
+    title: "Estudos Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+    tag: "mulher",
   },
-    serie: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Seríe Historica",
-        descricao: "Estatísticas mensais da Segurança Pública no estado do Rio de Janeiro",
-        imagem: "img/serie-hero.png"
-      }
-    ]
+  {
+    href: "https://ispconecta.rj.gov.br/serie_historica/",
+    className: "card-serie",
+    title: "Série Histórica",
+    desc: "Estatísticas mensais da Segurança Pública no estado do Rio de Janeiro",
+    img: "/Fotos/icone_seriehistorica.svg",
+    imgAlt: "",
+    layout: "text-first",
   },
-    discriminacao: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Seríe Historica",
-        descricao: "Estatísticas.",
-        imagem: "img/serie-hero.jpg"
-      }
-    ]
+  {
+    href: "https://ispconecta.rj.gov.br/armas/",
+    className: "card-armas",
+    title: "Armas",
+    desc: "Estatísticas mensais de apreensão de armas, munições, simulacros e artefatos explosivos no estado do Rio de Janeiro",
+    img: "/img/policiais.svg",
+    imgAlt: "",
+    layout: "text-first",
   },
-    letalidade: {
-    imagem: "img/home.jpg",
-    cards: [
-      {
-        titulo: "Painel de Letalidade Violenta",
-        descricao: "Estatísticas de vitimização por Letalidade Violenta no estado do Rio de Janeiro.",
-        imagem: "img/letalidade-hero.png"
-      }
-    ]
-  }
-};
+  {
+    href: "https://ispconecta.rj.gov.br/transito/",
+    className: "card-transito",
+    title: "Trânsito",
+    desc: "Estatísticas sobre trânsito no estado do Rio de Janeiro",
+    img: "/Fotos/icone_transito.svg",
+    imgAlt: "",
+    layout: "text-first",
+  },
+  {
+    href: "https://ispconecta.rj.gov.br/meio_ambiente/",
+    className: "card-meioambiente",
+    title: "Meio Ambiente",
+    desc: "Estatísticas de crimes ambientais no estado do Rio de Janeiro",
+    img: "/img/icone_ambiente.svg",
+    imgAlt: "",
+    layout: "text-first",
+  },
+  {
+    href: "https://ispconecta.rj.gov.br/discriminacao/",
+    className: "card-disc",
+    title: "Discriminação",
+    desc: "Estatísticas sobre discriminação no estado do Rio de Janeiro",
+    img: "/img/disc.svg",
+    imgAlt: "",
+    layout: "text-first",
+  },
+  {
+    href: "https://ispconecta.rj.gov.br/letalidade_violenta/",
+    className: "card-lv",
+    title: "Letalidade Violenta",
+    desc: "Estatísticas de vitimização por Letalidade Violenta no estado do Rio de Janeiro",
+    img: "/img/card_lv.png",
+    imgAlt: "",
+    layout: "text-first",
+  },
+];
 
-const heroContent = document.getElementById("heroContent");
-const heroSection = document.querySelector(".hero");
+function buildCard(panel) {
+  const a = document.createElement("a");
+  a.href = panel.href;
+  a.className = `card ${panel.className || ""}`.trim();
 
-function renderHero(tab) {
-
-  heroContent.classList.add("fade-out");
-
-  setTimeout(() => {
-
-    heroContent.innerHTML = "";
-
-    heroSection.style.backgroundImage =
-      `url('${heroData[tab].imagem}')`;
-
-  if (tab === "home") {
-
-  heroContent.innerHTML = `
-    <div class="home-hero">
-      <div class="hero-text">
-        <h1>${heroData.home.titulo}</h1>
-        <p>${heroData.home.subtitulo}</p>
-      </div>
-      <div class="hero-image">
-        <img src="${heroData.home.imagemLateral}" alt="Logos institucionais">
-      </div>
+  const imgHTML = `
+    <div class="card-img">
+      <img src="${panel.img}" alt="${panel.imgAlt}">
     </div>
   `;
 
-} else {
+  const textHTML = `
+    <div class="card-texto">
+      <h2>${panel.title}</h2>
+      <p>${panel.desc}</p>
+    </div>
+  `;
 
-      heroData[tab].cards.forEach(item => {
+  if (panel.layout === "text-first") {
+    a.innerHTML = textHTML + imgHTML;
+  } else {
+    a.innerHTML = imgHTML + textHTML;
+  }
 
-        heroContent.innerHTML += `
-          <div class="card">
-            <img src="${item.imagem}" class="card-img">
-            <div>
-              <h3 class="card-titulo">${item.titulo}</h3>
-              <p class="card-descricao">${item.descricao}</p>
-              <button>Acessar</button>
-            </div>
-          </div>
-        `;
-      });
+  return a;
+}
+
+// Render padrão no painel (boxes)
+(function renderPanels() {
+  const container = document.getElementById("boxes");
+  if (!container) return;
+
+  container.innerHTML = "";
+  PANELS.forEach((panel) => container.appendChild(buildCard(panel)));
+})();
+
+// =========================
+// HERO HOME DINÂMICO (lado esquerdo) - CARDS PRÓPRIOS DO HERO
+// =========================
+const heroLeft = document.getElementById("heroLeft");
+let heroLeftOriginalHTML = "";
+let heroMulherAtivo = false;
+
+/// Dados específicos do HERO (agora com imagem igual ao painel)
+const HERO_MULHER = [
+  {
+    href: "https://ispconecta.rj.gov.br/dossie_mulher/",
+    title: "Dossiê Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+  },
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    title: "Painel Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+  },
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    title: "Panorama da violência contra a Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+  },
+  {
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    title: "Estudos Mulher",
+    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
+    img: "/img/imgmod.svg",
+    imgAlt: "",
+  },
+];
+
+// Card do HERO com a MESMA estrutura do painel (imagem + texto)
+function buildHeroCard(item) {
+  const a = document.createElement("a");
+  a.href = item.href;
+  a.className = "hero-card";
+
+  a.innerHTML = `
+    <div class="card-img">
+      <img src="${item.img}" alt="${item.imgAlt}">
+    </div>
+    <div class="hero-card-text">
+      <h2>${item.title}</h2>
+      <p>${item.desc}</p>
+    </div>
+  `;
+
+  return a;
+}
+
+function renderHeroMulher() {
+  if (!heroLeft) return;
+
+  heroLeft.innerHTML = "";
+
+  // wrapper próprio (não usa .boxes)
+  const wrapper = document.createElement("div");
+  wrapper.className = "hero-cards";
+
+  HERO_MULHER.forEach((item) => {
+    wrapper.appendChild(buildHeroCard(item));
+  });
+
+  heroLeft.appendChild(wrapper);
+  heroMulherAtivo = true;
+}
+
+function restoreHeroHome() {
+  if (!heroLeft) return;
+
+  heroLeft.innerHTML = heroLeftOriginalHTML;
+  heroMulherAtivo = false;
+}
+
+function wireHeroMulherTab() {
+  const linkMulher = document.querySelector('#menu a[data-tab="mulher"]');
+  if (!linkMulher) return;
+
+  linkMulher.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!heroMulherAtivo) {
+      renderHeroMulher();
+    } else {
+      restoreHeroHome();
     }
 
-    heroContent.classList.remove("fade-out");
+    linkMulher.blur();
 
-  }, 300);
+    const nav = document.getElementById("nav");
+    if (nav && nav.classList.contains("active")) {
+      nav.classList.remove("active");
+      btnMobile?.setAttribute("aria-expanded", "false");
+    }
+  });
 }
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const tab = link.dataset.tab;
-    renderHero(tab);
-  });
-});
 
-renderHero("home"); // agora inicia no hero principal
+(function bootstrapHeroSwap() {
+  if (!heroLeft) return;
 
-
-
-const toggle = document.getElementById("menuToggle");
-const nav = document.getElementById("mainNav");
-const overlay = document.getElementById("menuOverlay");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  overlay.classList.toggle("active");
-});
-
-overlay.addEventListener("click", () => {
-  nav.classList.remove("active");
-  overlay.classList.remove("active");
-});
-
-
-const navLinks = document.querySelectorAll("#mainNav a");
-
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-});
-
-const scrollIndicator = document.querySelector(".scroll-indicator");
-
-scrollIndicator.addEventListener("click", () => {
-  window.scrollTo({
-    top: window.innerHeight,
-    behavior: "smooth"
-  });
-});
-
-
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const tab = link.dataset.tab;
-    document.querySelectorAll("nav a")
-      .forEach(a => a.classList.remove("active"));
-    link.classList.add("active");
-    stopCarousel();
-    currentSlide = carouselTabs.indexOf(tab);
-
-    renderHero(tab);
-  });
-});
+  heroLeftOriginalHTML = heroLeft.innerHTML;
+  wireHeroMulherTab();
+})();

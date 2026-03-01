@@ -1,0 +1,124 @@
+/* css/60-cards.css */
+
+/* 1) Base: tudo que é comum */
+.card,
+.card-painel-mulher,
+.card-armas,
+.card-serie,
+.card-transito,
+.card-meioambiente,
+.card-dossie,
+.card-disc,
+.card-lv {
+  width: 480px;
+  margin: 2em;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  height: auto; /* padrão */
+}
+
+/* 2) Variações: só o que muda */
+.card { background-color: #E13189; }
+
+.card-painel-mulher { background-color: #00ff00; }
+.card-armas { background-color: #505050; height: 162px; }
+.card-serie { background-color: #29A1D1; height: 162px; }
+.card-transito { background-color: #ffc300; height: 162px; }
+.card-meioambiente { background-color: #1A4D2E; height: 162px; }
+.card-dossie { background-color: #AC0C5C; height: 162px; }
+.card-disc { background-color: #914F1E; height: 162px; }
+.card-lv { background-color: #141414; height: 162px; }
+
+.card-texto{
+    width: 50%;
+    margin: auto;
+    color: white;
+    
+}
+
+.card-texto h2{
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* padrão para imagens em qualquer card */
+.card img,
+.card-painel-mulher img,
+.card-armas img,
+.card-serie img,
+.card-transito img,
+.card-dossie img,
+.card-lv img,
+.card-disc img,
+.card-meioambiente img {
+  height: 120px;
+  margin: 20px;
+}
+
+/* exceções */
+.card-meioambiente img {
+  height: 155px;
+}
+
+.card-disc img {
+  margin: -72px 20px;
+}
+
+
+
+/* =========================================================
+   HERO CARDS (clonado do painel)
+========================================================= */
+
+.hero-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;               /* igual .boxes */
+  align-items: center;
+  justify-content: center;    /* igual .boxes */
+}
+
+.hero-card {
+  width: 480px;
+  height: auto;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  display: flex;
+  align-items: flex-start;
+  background-color: #E13189;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* imagem igual ao painel */
+.hero-card img {
+  height: 120px;
+  margin: 20px;
+}
+
+.hero-card-text {
+  width: 50%;
+  margin: auto;
+  color: white;
+}
+
+.hero-card-text h2 {
+  font-size: 1.4em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.hero-card-text p {
+  color: white;
+}
+
+/* hover igual ao painel */
+.hero-card:hover {
+  background-color: #e13189c5;
+  border-radius: 5px;
+  color: white;
+}

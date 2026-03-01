@@ -1,0 +1,293 @@
+/* css/90-responsive.css */
+
+/* =========================================
+   Correção global de overflow (linha branca)
+========================================= */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   <= 1000px (mobile/tablet)
+========================= */
+@media (max-width: 1000px) {
+  /* Gov bar */
+  .gov_bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .icones {
+    padding: 0 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .links {
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Header */
+  #header {
+    padding: 0.75rem 1rem;
+  }
+
+  #nav {
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  #logo {
+    margin-right: 0;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburguer {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburguer::after,
+  #hamburguer::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburguer {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  /* Menu mobile */
+  #menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #0066a6;
+    transition: 0.3s;
+    z-index: 1000;
+
+    height: 0;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: calc(100vh - 120px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* HOME: vira coluna */
+  .home {
+    height: auto;
+    min-height: 100vh;
+    padding: 48px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* Texto do home */
+  #texto_home {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .home h1 {
+    width: 100%;
+    font-size: clamp(2rem, 6.5vw, 2.6rem);
+    line-height: 115%;
+  }
+
+  #texto_home p {
+    width: 100%;
+    font-size: clamp(1rem, 3.8vw, 1.15rem);
+    line-height: 140%;
+    margin: 14px 0;
+  }
+
+  #texto_home button {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 18px;
+    margin-top: 18px;
+  }
+
+  /* Logo institucional: somente ela (não mexe em outras imagens) */
+  #logo-institucional {
+    position: static;
+    width: min(320px, 80vw);
+    margin-top: 14px;
+  }
+
+  /* some com a animação no mobile */
+  #animation {
+    display: none;
+  }
+
+  /* About */
+  #fundo {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25em;
+    gap: 12px;
+  }
+
+  .about_texto {
+    width: 100%;
+    padding: 1.25em;
+    text-align: center;
+  }
+
+  .img_about {
+    width: 100%;
+  }
+
+  /* Footer */
+  footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* HERO LEFT: não pode manter margin-left 100px no mobile */
+  #home #heroLeft {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   <= 720px (ajustes finos)
+========================= */
+@media (max-width: 720px) {
+  .about_texto {
+    text-align: center;
+  }
+
+  .card-texto p {
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   <= 460px (mobile pequeno)
+========================= */
+@media (max-width: 460px) {
+  #header {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .home {
+    padding: 40px 14px;
+  }
+
+   /* 1) remove alturas fixas e padroniza layout em coluna */
+  .card,
+  .card-armas,
+  .card-serie,
+  .card-transito,
+  .card-meioambiente,
+  .card-dossie,
+  .card-disc,
+  .card-lv,
+  .hero-card {
+    width: min(480px, 92vw);
+    height: auto !important;          /* mata os 162px */
+    margin: 1.25em auto !important;   /* centraliza e tira sobra */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 2) texto precisa ocupar toda largura e poder encolher */
+  .card-texto,
+  .hero-card-text {
+    width: 100% !important;
+    min-width: 0;                     /* CRÍTICO em flex */
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3) quebra de texto (título e descrição) */
+  .card-texto h2,
+  .hero-card-text h2,
+  .card-texto p,
+  .hero-card-text p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* 4) opcional: título em 2 linhas com reticências (deixa limpo) */
+  .card-texto h2,
+  .hero-card-text h2 {
+    line-height: 1.15;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 5) imagem central e sem margens gigantes */
+  .card img,
+  .card-armas img,
+  .card-serie img,
+  .card-transito img,
+  .card-meioambiente img,
+  .card-dossie img,
+  .card-disc img,
+  .card-lv img,
+  .hero-card img {
+    height: 120px;
+    margin: 14px 0;
+  }
+
+  /* 6) remove aquela margem negativa da discriminação no mobile */
+  .card-disc img {
+    margin: 14px 0 !important;
+  }
+}

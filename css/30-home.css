@@ -1,0 +1,66 @@
+/* css/30-home.css */
+/*Início da Home*/
+
+.home{
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.500) 100%, rgba(217, 217, 217, 0.00) 100%),
+    url(/img/foto.jpg);
+    background-size: cover;
+    background-position: left;
+    position: relative;
+
+}
+
+#logo-institucional{
+    position: absolute;
+    width:32%;
+    left: 62%;
+    top: 5%;
+}
+
+#animation{
+    width: 50%;
+    height: 100%;
+}
+
+#texto_home{
+    width: 50vw;
+    margin-left: 100px;
+}
+
+#texto_home p{
+    margin: 20px 0px;
+    width: 70%;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: white;
+}
+
+.home h1{
+    font-size: 2.8em;
+    line-height: 120%;
+    width: 65%;
+    color: white;
+}
+
+#texto_home button{
+    padding: 20px 50px;
+    background-color: #0066A6;
+    border: none;
+    font-size: 16px;
+    color: white;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#texto_home button i{
+    margin-left: 1em;
+}
+
+
+/*Fim da Home*/

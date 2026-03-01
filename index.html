@@ -1,107 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ISP Conecta</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GD47NFP31Q"></script>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/reset.css?v=1">
-<link rel="stylesheet" href="css/layout.css?v=1">
-<link rel="stylesheet" href="css/header.css?v=1">
-<link rel="stylesheet" href="css/hero.css?v=1">
-<link rel="stylesheet" href="css/footer.css?v=1">
-<link rel="stylesheet" href="css/responsive.css?v=1">
-</head>
-<body>
-<!-- Barra institucional -->
-<div class="gov-bar">
-    <div class="container">
-    <!-- gov-left e gov-right aqui dentro -->
-       <div class="gov-left">
-    <span class="gov-domain">rj.gov</span>
-    <div class="gov-social">
-      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD47NFP31Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-GD47NFP31Q");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISP Conecta</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/605eb31f77.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="/icones/icone.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div class="gov_bar">
+      <div class="icones">
+        <a id="rj" href="https://www.rj.gov.br/">rj.gov</a>
+        <a href="https://www.instagram.com/govrj/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/governodorio"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/GovRJ"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/user/GovRJ"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="links">
+        <a href="https://www.transparencia.rj.gov.br/">Portal da Transparência</a>
+        <a href="https://www.rj.gov.br/ouverj/">Acesso à Informação</a>
+      </div>
+    </div>
+
+    <header id="header">
+      <nav id="nav">
+        <button id="btn-mobile" aria-expanded="false">
+          <span id="hamburguer"></span>
+        </button>
+        <div id="logo">
+          <p id="titulo">ISP</p>
+          <p id="sub-titulo">Conecta</p>
+        </div>
+        <ul id="menu">
+           <li><a href="javascript:void(0)" data-tab="mulher">Mulher</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/armas/">Armas</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/serie_historica/">Série Histórica</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/transito/">Trânsito</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/meio_ambiente/">Meio Ambiente</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/discriminacao/">Discriminação</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/letalidade_violenta/">Letalidade Violenta</a></li>
+        </ul>
+      </nav>
+    </header>
+<section class="home" id="home">
+  <div id="heroLeft">
+    <div id="texto_home">
+      <h1>Conectando a sociedade com os dados</h1>
+      <p>Explore painéis interativos e com dados atualizados sobre a segurança pública do Rio de Janeiro</p>
+      <a href="#subtitle_panels">
+        <button type="button">
+          Começar agora
+          <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
+        </button>
+      </a>
     </div>
   </div>
-  <div class="gov-right">
-    <a href="#"><i class="fa-solid fa-shield-halved"></i> Portal da Transparência</a>
-    <a href="#"><i class="fa-solid fa-circle-info"></i> Acesso à Informação</a>
-  </div>
-  </div>
 
-</div>
-  <!-- Header azul -->
-<header class="main-header">
-    <div class="container">
-    <!-- logo e nav aqui dentro -->
-     <div class="logo">ISP Conecta</div>
-  <button class="menu-toggle" id="menuToggle">☰</button>
-  <nav id="mainNav">
-    <a href="#" data-tab="home">Home</a> 
-    <a href="#" data-tab="mulher">Mulher</a>
-    <a href="#" data-tab="armas">Armas</a>
-    <a href="#" data-tab="serie">Série Histórica</a>
-    <a href="#" data-tab="transito">Trânsito</a>
-    <a href="#" data-tab="ambiente">Meio Ambiente</a>
-    <a href="#" data-tab="discriminacao">Discriminação</a>
-    <a href="#" data-tab="letalidade">Letalidade Violenta</a>
-  </nav>
-  </div>
-  
-</header>
-<div class="menu-overlay" id="menuOverlay"></div>
-  <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg" id="heroBg1"></div>
-  <div class="hero-bg" id="heroBg2"></div>
-  <div class="hero-content" id="heroContent"></div>
-  <div class="scroll-indicator">↓</div>
+ <img id="logo-institucional" src="/Figuras/ISP_SESP_horizontal_branco.svg" alt="" />
+  <div id="animation"></div>
 </section>
-<footer class="main-footer">
-  <div class="footer-container">
 
-    <div class="footer-left">
-      <img src="img/logo-isp-branco.png" alt="Logo ISP" class="footer-logo">
 
-<div class="footer-social">
-  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-  <a href="#"><i class="fa-brands fa-youtube"></i></a>
-  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-  <a href="#"><i class="fa-brands fa-threads"></i></a>
 
-</div>
+    
+    <section class="about" id="about">
+      <div id="fundo">
+        <div class="about_texto">
+          <h2>Sobre a plataforma</h2>
+        </div>
+        <div class="img_about">
+          <p class="about_texto_subtitulo">
+            Bem-vindo(a) ao <span style="color: #29a1d1">ISP Conecta</span>, uma página de dados abertos do Instituto de
+            Segurança Pública.
+            <br />
+            A ferramenta tem como objetivo principal centralizar e fornecer informações de forma transparante através de
+            painéis, dashboards interativos com conteúdos sobre registros criminais e atividades policiais coletados
+            pelo Instituto de Segurança Pública do Rio de Janeiro.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="panels">
+      <h2 id="subtitle_panels">Painéis</h2>
+      <!-- cards dinâmicos -->
+      <div class="boxes" id="boxes"></div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="sec aboutus" id="contato">
+          <h2>Sobre Nós</h2>
+          <p>
+            Acessar os diversos painéis de registros criminais e de atividade policial do estado do Rio de Janeiro.
+          </p>
+
+          <ul class="sci">
+            <li>
+              <a href="https://www.youtube.com/@InstitutodeSegurancaPublica"><i class="fa fa-brands fa-youtube"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/isp_rj/"><i class="fa fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/isprj"><i class="fa fa-brands fa-x-twitter"></i></a>
+            </li>
+            <li>
+              <a href="https://www.threads.net/@isp_rj"><i class="fa fa-brands fa-threads"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/instituto-de-seguran%C3%A7a-p%C3%BAblica/"
+                ><i class="fa fa-brands fa-linkedin-in"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sec quicklinks">
+          <h2>Links Painéis</h2>
+          <li><a href="https://ispconecta.rj.gov.br/ispmulher">Dossiê Mulher</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/ispmulher">Painel Mulher</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/ispmulher">Panorama da violência contra a Mulher</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/ispmulher">Estudos Mulher</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/armas">Armas</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/serie_historica/">Série Histórica</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/transito/">Trânsito</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/meio_ambiente/">Meio Ambiente</a></li>
+          <li><a href="https://ispconecta.rj.gov.br/discriminacao/">Discriminação</a></li>
+        </div>
+
+        <div class="sec contact">
+          <h2>Fale com a gente</h2>
+
+          <ul class="info">
+            <li>
+              <span><i class="fa-solid fa-location-dot"></i></span>
+              <span>Rua Benedito Hipólito nº 216, 12º andar, Cidade Nova, Rio de Janeiro - RJ, CEP 20.211-130</span>
+            </li>
+
+            <li>
+              <span><i class="fa-solid fa-phone"></i></span>
+              <p><a href="tel:2123329709">(21) 2332-9709</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyrightText">
+      <p>Direitos Reservados © Instituto de Segurança Pública. Todos os Direitos Reservados</p>
     </div>
-
-    <div class="footer-center">
-      <h4>Sobre Nós</h4>
-      <p>
-        Somos o Instituto de Segurança Pública do Rio de Janeiro (ISP-RJ),
-        órgão do Governo do Estado responsável pela produção, análise e
-        divulgação de dados e estatísticas.
-      </p>
-    </div>
-
-    <div class="footer-right">
-      <h4>Fale com a gente</h4>
-      <p>Rua Benedito Hipólito nº 216, 12º andar</p>
-      <p>Cidade Nova, Rio de Janeiro - RJ</p>
-      <p>(21) 2332-9709</p>
-    </div>
-
-  </div>
-</footer>
-<div class="footer-bottom">
-  © 2026 Instituto de Segurança Pública do Rio de Janeiro. Todos os direitos reservados.
-</div>
-
-<script src="js/js.js"></script>
-</body>
+    <script src="js.js"></script>
+  </body>
 </html>

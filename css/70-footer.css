@@ -1,0 +1,129 @@
+/* css/70-footer.css */
+footer{
+    background-color: #0068A7;
+    position: relative;
+    height: auto;
+    padding: 50px 100px;
+    font-size: 13px;
+}
+
+footer .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer .container .sec h2{
+    position:relative;
+    color: #ffff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container .sec h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left:0;
+    width: 50px;
+    height: 2px;
+    background: #ffff;
+}
+
+footer .container .sec p{
+    color: #ffff;
+}
+
+.sci{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-gap: 10px;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: #0073bb;  
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sci li a:hover{
+    background:#005386;
+}
+
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+
+.quicklinks{
+    position: relative;
+}
+
+.quicklinks li{
+    list-style: none;
+}
+
+.quicklinks li a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quicklinks li a:hover{
+    color: #44a0be;
+}
+
+.contact{
+    position: relative;
+
+}
+
+.info li{
+    display:grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+
+.info li span:nth-child(1){
+    color: #fff;
+    font-size:20px;
+}
+
+.info li span{
+    color: #fff;
+}
+
+.info a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.info a:hover{
+    color: #44a0be;
+}
+
+.copyrightText{
+    width: 100%;
+    background: #004e7e;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 0.8;
+}
+
+.copyrightText p{
+    font-size: 0.6rem;
+}

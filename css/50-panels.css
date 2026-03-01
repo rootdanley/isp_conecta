@@ -1,0 +1,27 @@
+/* css/50-panels.css */
+.panels{
+    height: auto;
+}
+
+#subtitle_panels{
+    font-size: 2.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
+
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxes a{
+    box-shadow: 10px 13px 5px -1px rgba(117,117,117,0.29);
+    -webkit-box-shadow: 10px 13px 5px -1px rgba(117,117,117,0.29);
+    -moz-box-shadow: 10px 13px 5px -1px rgba(117,117,117,0.29);
+}

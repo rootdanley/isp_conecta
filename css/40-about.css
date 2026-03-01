@@ -1,0 +1,48 @@
+/* css/40-about.css */
+/*Inicio about*/
+.about{
+    text-align: center;
+    margin-bottom: 3em;
+    padding: 1em 0;
+    background-color: #0066A6;
+    color: white;
+}
+
+.about h2{
+    font-size: 2.3em;
+    color: white;
+    font-weight: 300;
+}
+
+#fundo{
+    display: flex;
+    padding: 2em;
+
+}
+
+.about_texto{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    padding: 5em;
+}
+
+.about_texto_titulo{
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: 300;
+}
+
+.about_texto_subtitulo{
+    font-size:1.1em;
+    line-height: 160%;
+}
+
+.img_about{
+   background-image: url(/Figuras/);
+   width: 50%;
+   display: flex;
+   align-items: center;
+}
+/*Fim about*/
