@@ -33,7 +33,7 @@ const PANELS = [
   },
   {
     href: "https://www.ispconecta.rj.gov.br/ispmulher/",
-    className: "card",
+    className: "card-painel-mulher",
     title: "Painel Mulher",
     desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
     img: "/img/imgmod.svg",
@@ -45,7 +45,7 @@ const PANELS = [
     className: "card-painel-mulher",
     title: "Panorama da violência contra a Mulher",
     desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
-    img: "/img/imgmod.svg",
+    img: "img/imgmod.svg",
     imgAlt: "",
     tag: "mulher",
   },
