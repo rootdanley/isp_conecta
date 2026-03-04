@@ -160,33 +160,41 @@ let heroMulherAtivo = false;
 /// Dados específicos do HERO (agora com imagem igual ao painel)
 const HERO_MULHER = [
   {
-    href: "https://ispconecta.rj.gov.br/dossie_mulher/",
+    href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card-dossiemulher",
     title: "Dossiê Mulher",
-    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
-    img: "img/imgmod.svg",
+    desc: "Estudo publicado anualmente pelo ISP que reúne dados sobre crimes cometidos contra mulheres, organizado a partir das cinco formas de violência previstas na Lei Maria da Penha.",
+    img: "img/dossiemulher.png",
     imgAlt: "",
+    tag: "mulher",
   },
   {
     href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card-painel-mulher",
     title: "Painel Mulher",
-    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
-    img: "img/imgmod.svg",
+    desc: "Estatísticas sobre delitos cometidos contra mulheres no estado do Rio de Janeiro.",
+    img: "img/painelmulher.png",
     imgAlt: "",
+    tag: "mulher",
   },
   {
     href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card-panoramamulher",
     title: "Panorama da violência contra a Mulher",
     desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
-    img: "img/imgmod.svg",
+    img: "img/panoramamulher.png",
     imgAlt: "",
+    tag: "mulher",
   },
   {
     href: "https://www.ispconecta.rj.gov.br/ispmulher/",
+    className: "card-estudosmulher",
     title: "Estudos Mulher",
-    desc: "Estatísticas mensais de violência contra a mulher no estado do Rio de Janeiro",
-    img: "img/imgmod.svg",
+    desc: "Ferramenta que reúne dados inéditos de alguns crimes cometidos contra meninas e mulheres no estado.",
+    img: "img/estudosmulher.png",
     imgAlt: "",
-  },
+    tag: "mulher",
+  }
 ];
 
 // Card do HERO com a MESMA estrutura do painel (imagem + texto)
