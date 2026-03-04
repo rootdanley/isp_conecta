@@ -1,4 +1,5 @@
 /* css/main.css */
+@import url("./60-cards.css");
 @import url("./00-reset.css");
 @import url("./01-base.css");
 
@@ -7,7 +8,7 @@
 @import url("./30-home.css");
 @import url("./40-about.css");
 @import url("./50-panels.css");
-@import url("./60-cards.css");
+
 @import url("./70-footer.css");
 
 @import url("./90-responsive.css");

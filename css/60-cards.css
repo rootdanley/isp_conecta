@@ -3,6 +3,9 @@
 /* 1) Base: tudo que é comum */
 .card,
 .card-painel-mulher,
+.card-estudosmulher,
+.card-dossiemulher,
+.card-panoramamulher,
 .card-armas,
 .card-serie,
 .card-transito,
@@ -19,17 +22,21 @@
   height: auto; /* padrão */
 }
 
-/* 2) Variações: só o que muda */
-.card { background-color: #E13189; }
 
-.card-painel-mulher { background-color: #ff91ed; }
+.card-painel-mulher { background-color: #ea66a1; }
+.card-estudosmulher { background-color: #774582; }
+.card-dossiemulher { background-color: #56215b; }
+.card-panoramamulher { background-color: #9860a1; }
+
+
+
 .card-armas { background-color: #505050; height: 162px; }
 .card-serie { background-color: #29A1D1; height: 162px; }
 .card-transito { background-color: #ffc300; height: 162px; }
 .card-meioambiente { background-color: #1A4D2E; height: 162px; }
 .card-dossie { background-color: #AC0C5C; height: 162px; }
 .card-disc { background-color: #914F1E; height: 162px; }
-.card-lv { background-color: #141414; height: 162px; }
+.card-lv { background-color: #ffffff; height: 162px; }
 
 .card-texto{
     width: 50%;
